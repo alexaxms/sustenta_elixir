@@ -1,0 +1,36 @@
+.site-footer {
+  background-color: #021C36;
+  margin-top: 4rem;
+  padding: 2.5rem 0 2rem;
+  color: white;
+  font-size: .9rem;
+  p {
+    margin-bottom: .5rem;
+  }
+}
+.site-header {
+  .site-nav {
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    margin-top: 10px;
+    background-color: #021C36;
+    ul {
+      text-transform: uppercase;
+      width: 100%;
+      li {
+        border-right: 1px solid #235485;
+        color: #e6e6e6;
+        font-weight: 600;
+        float: left;
+        a {
+          color: white;
+          font-size: .8rem;
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+      }
+    }
+  }
+}

@@ -11,18 +11,29 @@ html lang="en"
     link rel="stylesheet" href="#{Routes.static_path(@conn, "/css/app.css")}"
 
   body
-    .container
-      header.header
-        nav role="navigation"
-          ul.nav.nav-pills.pull-right
+    header.site-header
+      .container
+        .row
+          .col-md-3
+            img src='images/logo-premio.png'
+      nav.site-nav
+        .container
+          ul
             li
-              a href="http://www.phoenixframework.org/docs" Get Started
-        span.logo
+              a Inicio
+            li
+              a Quiénes Somos
 
-      p.alert.alert-info role="alert"= get_flash(@conn, :info)
-      p.alert.alert-danger role="alert"= get_flash(@conn, :error)
+    p.alert.alert-info role="alert"= get_flash(@conn, :info)
+    p.alert.alert-danger role="alert"= get_flash(@conn, :error)
 
-      main role="main"
-        = render @view_module, @view_template, assigns
+    main role="main"
+      = render @view_module, @view_template, assigns
+
+    footer.site-footer
+      .container
+        p Universidad Tecnológica Metropolitana del Estado de Chile
+        p Dieciocho 161 - Santiago, Chile. Metro Moneda - Fono: 2787 7500
+        p 2019 © UTEM - Todos los derechos reservados.
 
     script src="#{Routes.static_path(@conn, "/js/app.js")}"
