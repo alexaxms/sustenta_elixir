@@ -74,5 +74,5 @@ config :sustenta_elixir, SustentaElixir.Repo,
   username: "postgres",
   password: "postgres",
   database: "sustenta_elixir_dev",
-  hostname: "localhost",
+  hostname: "db",
   pool_size: 10
