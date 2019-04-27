@@ -74,5 +74,5 @@ config :sustenta_elixir, SustentaElixir.Repo,
   username: "postgres",
   password: "postgres",
   database: "sustenta_elixir_dev",
-  hostname: "db",
+  hostname: "localhost", #Todo: Cambiar al deployar con docker
   pool_size: 10

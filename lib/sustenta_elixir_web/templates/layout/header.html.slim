@@ -1,0 +1,14 @@
+header.site-header
+  .container
+    .row
+      .col-md-3
+        a.brand
+          img src='images/logo-premio.png'
+  nav.site-nav
+    .container
+      #menu-principal
+        ul
+          li
+            = link "Inicio", to: Routes.page_path(@conn, :index)
+          li
+            = link "Quienes Somos", to: Routes.page_path(@conn, :show , "quienes_somos")

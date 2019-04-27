@@ -6,34 +6,24 @@ html lang="en"
     meta content="width=device-width, initial-scale=1" name="viewport"
     meta content="" name="description"
     meta content="" name="author"
-    title Hello SustentaElixir!
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    title Sustenta - Premio Empresa Sustentable 2019
+    link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Oswald:300,400,500,600,700|Merriweather:300,400,700" rel="stylesheet"
     link rel="stylesheet" href="#{Routes.static_path(@conn, "/css/app.css")}"
 
   body
-    header.site-header
-      .container
-        .row
-          .col-md-3
-            img src='images/logo-premio.png'
-      nav.site-nav
-        .container
-          ul
-            li
-              a Inicio
-            li
-              a Quiénes Somos
+    = render "header.html", conn: @conn
 
     p.alert.alert-info role="alert"= get_flash(@conn, :info)
     p.alert.alert-danger role="alert"= get_flash(@conn, :error)
 
     main role="main"
-      = render @view_module, @view_template, assigns
+      section.site-content
+        .row
+          .col-md-8
+            = render @view_module, @view_template, assigns
+          .col-md-4
+            = render "sidebar.html"
 
-    footer.site-footer
-      .container
-        p Universidad Tecnológica Metropolitana del Estado de Chile
-        p Dieciocho 161 - Santiago, Chile. Metro Moneda - Fono: 2787 7500
-        p 2019 © UTEM - Todos los derechos reservados.
+    = render "footer.html"
 
     script src="#{Routes.static_path(@conn, "/js/app.js")}"
