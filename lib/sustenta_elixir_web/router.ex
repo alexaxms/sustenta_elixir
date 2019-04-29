@@ -7,20 +7,19 @@ defmodule SustentaElixirWeb.Router do
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
-  end
-
-  pipeline :api do
-    plug :accepts, ["json"]
+    plug Phauxth.Authenticate
   end
 
   scope "/", SustentaElixirWeb do
     pipe_through :browser
 
-    resources "/", PageController, only: [:index, :show]
+    resources "/", PageController, only: [:index, :show] #Todo: Arreglar este fail
+    resources "/users", UserController
+    resources "/sessions", SessionController, only: [:new, :create, :delete]
+    get "/confirm", ConfirmController, :index
+    resources "/password_resets", PasswordResetController, only: [:new, :create]
+    get "/password_resets/edit", PasswordResetController, :edit
+    put "/password_resets/update", PasswordResetController, :update
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", SustentaElixirWeb do
-  #   pipe_through :api
-  # end
 end

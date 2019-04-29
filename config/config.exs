@@ -17,6 +17,16 @@ config :sustenta_elixir, SustentaElixirWeb.Endpoint,
   render_errors: [view: SustentaElixirWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: SustentaElixir.PubSub, adapter: Phoenix.PubSub.PG2]
 
+# Phauxth authentication configuration
+config :phauxth,
+  user_context: SustentaElixir.Accounts,
+  crypto_module: Argon2,
+  token_module: SustentaElixirWeb.Auth.Token
+
+# Mailer configuration
+config :sustenta_elixir, SustentaElixirWeb.Mailer,
+  adapter: Bamboo.LocalAdapter
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",

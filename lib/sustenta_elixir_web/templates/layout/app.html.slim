@@ -11,7 +11,7 @@ html lang="en"
     link rel="stylesheet" href="#{Routes.static_path(@conn, "/css/app.css")}"
 
   body
-    = render "header.html", conn: @conn
+    = render "header.html", conn: @conn, current_user: @current_user
 
     p.alert.alert-info role="alert"= get_flash(@conn, :info)
     p.alert.alert-danger role="alert"= get_flash(@conn, :error)
