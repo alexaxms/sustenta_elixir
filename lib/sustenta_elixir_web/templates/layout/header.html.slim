@@ -3,7 +3,7 @@ header.site-header
     .row
       .col-md-3
         a.brand
-          img src='images/logo-premio.png'
+          img src='/images/logo-premio.png'
   nav.site-nav
     .container
       #menu-principal
@@ -12,16 +12,13 @@ header.site-header
             = link "Inicio", to: Routes.page_path(@conn, :index)
           li
             = link "Quiénes Somos", to: Routes.page_path(@conn, :show , "quienes_somos")
-          = if @current_user do
-            li
-              = link "Usuarios", to: Routes.user_path(@conn, :index)
-            li
-              = link @current_user.email, to: Routes.user_path(@conn, :show, @current_user)
-            li
-              = link "Logout", to: Routes.session_path(@conn, :delete, current_session(@conn)), method: :delete
-          - else
-            li
-              = link "Nuevo Usuario", to: Routes.user_path(@conn, :new)
-            li
-              = link "Ingresar", to: Routes.session_path(@conn, :new)
-
+          li.nav-item.dropdown
+            a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+              |Dropdown
+            .dropdown-menu aria-labelledby="navbarDropdown"
+              a class="dropdown-item" href="#"
+                |Action
+              a class="dropdown-item" href="#"
+                |Action
+          li
+            = link "Datos de interés", to: Routes.page_path(@conn, :show , "datos_de_interes")

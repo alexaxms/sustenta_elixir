@@ -6,3 +6,20 @@ section.site-sidebar
         span Inicio de postulación: 1 de Agosto 2019
       li
         span Cierre de postulación: 20 de Septiembre 2019
+
+section.site-sidebar
+  .info
+    h2 Ingresar
+    ul
+      = if @current_user do
+        li
+          = link "Usuarios", to: Routes.user_path(@conn, :index)
+        li
+          = link @current_user.email, to: Routes.user_path(@conn, :show, @current_user)
+        li
+          = link "Logout", to: Routes.session_path(@conn, :delete, current_session(@conn)), method: :delete
+      - else
+        li
+          = link "Nuevo Usuario", to: Routes.user_path(@conn, :new)
+        li
+          = link "Ingresar", to: Routes.session_path(@conn, :new)
