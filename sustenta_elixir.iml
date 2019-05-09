@@ -112,5 +112,15 @@
     <orderEntry type="library" name="ecto_sql" level="project" />
     <orderEntry type="library" name="benchee" level="project" />
     <orderEntry type="library" name="benchee_json" level="project" />
+    <orderEntry type="library" name="phauxth" level="project" />
+    <orderEntry type="library" name="argon2_elixir" level="project" />
+    <orderEntry type="library" name="bamboo" level="project" />
+    <orderEntry type="library" name="simple_form" level="project" />
+    <orderEntry type="library" name="dialyxir" level="project" />
+    <orderEntry type="library" name="comeonin" level="project" />
+    <orderEntry type="library" name="elixir_make" level="project" />
+    <orderEntry type="library" name="ex_machina" level="project" />
+    <orderEntry type="library" name="excoveralls" level="project" />
+    <orderEntry type="library" name="floki" level="project" />
   </component>
 </module>

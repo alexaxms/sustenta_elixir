@@ -25,6 +25,7 @@ defmodule SustentaElixirWeb.UserController do
     key = Token.sign(%{"email" => email})
     case Accounts.create_user(user_params) do
       {:ok, user} ->
+        SustentaElixir.Accounts.confirm_user(user)
         Log.info(%Log{user: user.id, message: "user created"})
 
         Email.confirm_request(email, key)
